@@ -2,9 +2,9 @@
 
 GPL-3.0 fork of Muqsit arithmexp with DevTools-compatible diagnostics for Axolotl-PM virions
 
-[![CI](https://github.com/NhanAZ-Libraries/arithmexp/actions/workflows/ci.yml/badge.svg)](https://github.com/NhanAZ-Libraries/arithmexp/actions/workflows/ci.yml)
-[![Latest release](https://img.shields.io/github/v/release/NhanAZ-Libraries/arithmexp)](https://github.com/NhanAZ-Libraries/arithmexp/releases/latest)
-[![License](https://img.shields.io/github/license/NhanAZ-Libraries/arithmexp)](https://github.com/NhanAZ-Libraries/arithmexp/blob/master/LICENSE)
+[![CI](https://github.com/AxolotlBucketLabs/arithmexp/actions/workflows/ci.yml/badge.svg)](https://github.com/AxolotlBucketLabs/arithmexp/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/AxolotlBucketLabs/arithmexp)](https://github.com/AxolotlBucketLabs/arithmexp/releases/latest)
+[![License](https://img.shields.io/github/license/AxolotlBucketLabs/arithmexp)](https://github.com/AxolotlBucketLabs/arithmexp/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/986553214889517088?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/j2X83ujT6c)
 
 
@@ -32,7 +32,7 @@ The pending parser changes reject empty parentheses used as operands and argumen
 composer require muqsit/arithmexp
 ```
 
-That command installs the upstream Composer package. To use this fork, pin the [NhanAZ-Libraries source](https://github.com/NhanAZ-Libraries/arithmexp) as a Git submodule, as Calculator does. See [the fork changelog](CHANGELOG.md) for the tested consumer, behavior changes and rollback steps.
+That command installs the upstream Composer package. To use this fork, pin the [AxolotlBucketLabs source](https://github.com/AxolotlBucketLabs/arithmexp) as a Git submodule, as Calculator does. See [the fork changelog](CHANGELOG.md) for the tested consumer, behavior changes and rollback steps.
 
 ## Evaluating a mathematical expression
 To evaluate a mathematical expression, create a [`Parser`](https://github.com/Muqsit/arithmexp/blob/master/src/muqsit/arithmexp/Parser.php) and invoke `Parser::parse()` with an expression string to obtain a reusable [`Expression`](https://github.com/Muqsit/arithmexp/blob/master/src/muqsit/arithmexp/expression/Expression.php) object.

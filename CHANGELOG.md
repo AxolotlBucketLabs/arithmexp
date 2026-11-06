@@ -2,7 +2,7 @@
 
 ## 1.1.1
 
-This NhanAZ-Libraries fork keeps the upstream GPL-3.0 license and public parser interfaces. It can be pinned as a virion source by a consuming plugin. The upstream Composer package remains separate.
+This AxolotlBucketLabs fork keeps the upstream GPL-3.0 license and public parser interfaces. It can be pinned as a virion source by a consuming plugin. The upstream Composer package remains separate.
 
 - Fix virion shading and strict inequality handling in Calculator.
 - Preserve evaluation order, arithmetic exceptions and result types in the documented optimizer cases. Remove automatic floating-point regrouping.
