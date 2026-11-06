@@ -7,6 +7,11 @@ GPL-3.0 fork of Muqsit arithmexp with DevTools-compatible diagnostics for Axolot
 [![License](https://img.shields.io/github/license/AxolotlBucketLabs/arithmexp)](https://github.com/AxolotlBucketLabs/arithmexp/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/986553214889517088?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/j2X83ujT6c)
 
+## Compatibility
+
+- The virion manifest supports API `4.21.1` and API `5.0.0`.
+- Composer requires PHP 8.1 or newer.
+- The CI workflow runs PHPUnit and PHPStan at level max. The DevTools workflow builds a virion PHAR with PHP 8.4.
 
 ## Fork 1.1.1 compatibility note
 
@@ -27,15 +32,22 @@ The pending parser changes reject empty parentheses used as operands and argumen
 > [!TIP]
 > Try out arithmexp parser on the [**demo site**](https://arithmexp.cosmicpe.dev/)!
 
-## Installation with composer
-```
-composer require muqsit/arithmexp
+## Installation
+
+The Composer package name remains `muqsit/arithmexp`, so `composer require muqsit/arithmexp` resolves the upstream package rather than this fork. Use this repository as a local virion source when you need the AxolotlBucketLabs maintenance branch.
+
+Place the checkout in `virions/arithmexp/` and declare it in the consuming plugin's `devtools.yml`:
+
+```yaml
+virions:
+  - name: arithmexp
+    version: ^1.1.1
 ```
 
-That command installs the upstream Composer package. To use this fork, pin the [AxolotlBucketLabs source](https://github.com/AxolotlBucketLabs/arithmexp) as a Git submodule, as Calculator does. See [the fork changelog](CHANGELOG.md) for the tested consumer, behavior changes and rollback steps.
+See [CHANGELOG.md](CHANGELOG.md) for the tested consumer, behavior changes and rollback steps.
 
 ## Evaluating a mathematical expression
-To evaluate a mathematical expression, create a [`Parser`](https://github.com/Muqsit/arithmexp/blob/master/src/muqsit/arithmexp/Parser.php) and invoke `Parser::parse()` with an expression string to obtain a reusable [`Expression`](https://github.com/Muqsit/arithmexp/blob/master/src/muqsit/arithmexp/expression/Expression.php) object.
+To evaluate a mathematical expression, create a [`Parser`](https://github.com/AxolotlBucketLabs/arithmexp/blob/master/src/muqsit/arithmexp/Parser.php) and invoke `Parser::parse()` with an expression string to obtain a reusable [`Expression`](https://github.com/AxolotlBucketLabs/arithmexp/blob/master/src/muqsit/arithmexp/expression/Expression.php) object.
 `Expression::evaluate()` returns the value of the expression.
 ```php
 $parser = Parser::createDefault();
@@ -56,8 +68,7 @@ var_dump($expression->evaluate(["x" => 1.5, "y" => 1.5])); // float(3)
 $expression = $parser->parse("a > b or c");
 var_dump($expression->evaluate(["a" => 1, "b" => 2, "c" => true])); // bool(true)
 ```
-The return value type of the evaluation is consistent with that of PHP's—`int + int` returns an `int` value, while `float + int|float` returns a `float` value.
-`bool + bool` returns an `int` value, while `int || int` returns a `bool` value.
+The return value type of the evaluation follows PHP's arithmetic rules. `int + int` returns an `int` value, while `float + int|float` returns a `float` value. `bool + bool` returns an `int` value, while `int || int` returns a `bool` value.
 
 > [!NOTE]
-> Check out the [**wiki**](https://github.com/Muqsit/arithmexp/wiki) for documentation notes and further implementation details.
+> See [CHANGELOG.md](CHANGELOG.md) for fork-specific behavior changes and compatibility notes.
