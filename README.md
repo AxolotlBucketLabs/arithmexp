@@ -5,7 +5,7 @@ GPL-3.0 fork of Muqsit arithmexp with DevTools-compatible diagnostics for Axolot
 [![CI](https://github.com/AxolotlBucketLabs/arithmexp/actions/workflows/ci.yml/badge.svg)](https://github.com/AxolotlBucketLabs/arithmexp/actions/workflows/ci.yml)
 [![Latest release](https://img.shields.io/github/v/release/AxolotlBucketLabs/arithmexp)](https://github.com/AxolotlBucketLabs/arithmexp/releases/latest)
 [![License](https://img.shields.io/github/license/AxolotlBucketLabs/arithmexp)](https://github.com/AxolotlBucketLabs/arithmexp/blob/master/LICENSE)
-[![Discord](https://img.shields.io/discord/986553214889517088?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/j2X83ujT6c)
+[![Discord](https://img.shields.io/discord/1568295845374206052?label=Discord&logo=discord&logoColor=white&color=5865F2)](https://discord.gg/Pk4FrNvHnM)
 
 ## Compatibility
 
